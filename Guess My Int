@@ -1,0 +1,40 @@
+
+/**
+ * A class that guesses a random int in a loop
+ *
+ * @LMADAN
+ * @4/8
+ */
+   import java.util.Scanner;
+    public class TriviaQ
+    {
+    
+       public static void main(String [] args)
+       {
+           Scanner in = new Scanner(System.in);
+           System.out.println("Guess a number 1-100!");
+           int num =in.nextInt();
+           int correctNum = (int) (Math.random() * 100 + 1);
+           int numTries = 1;
+           
+           while (num != correctNum)
+           {
+             numTries ++;
+            if(num > correctNum)
+            {
+             System.out.println("Wrong Try Again, too high! ");
+             System.out.println("Number of Tries: " + numTries);
+             num = in.nextInt();
+            }
+            else
+            {
+             System.out.println("Wrong Try Again, too low! ");
+             System.out.println("Number of Tries: " + numTries);
+             num = in.nextInt();  
+            }
+           }
+    
+           numTries++;
+           System.out.println("Correct!, it took you " + numTries + " tries ");
+       }
+    }
